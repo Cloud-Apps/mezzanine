@@ -5,6 +5,10 @@ mem: 64M
 env:
   DJANGO_SETTINGS_MODULE: settings
 
+# This hack is needed to install from the App Store on Stackato 1.0
+pre-running:
+  - export DJANGO_SETTINGS_MODULE=settings
+
 ignores: 
   - '*.pyc'
   - 'mezzanine.db'
